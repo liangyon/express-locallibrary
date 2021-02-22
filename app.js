@@ -19,7 +19,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // mongoose setup
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://dbUser:wrVQRZB64M9mVMA@cluster0.msfbm.mongodb.net/local_library?retryWrites=true&w=majority';
+var dev_db_url = 'mongodb+srv://dbUser:wrVQRZB64M9mVMA@cluster0.msfbm.mongodb.net/local_library?retryWrites=true&w=majority'
+var mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
