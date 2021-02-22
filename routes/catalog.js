@@ -6,6 +6,7 @@ var book_controller = require('../controllers/bookController');
 var author_controller = require('../controllers/authorController');
 var genre_controller = require('../controllers/genreController');
 var book_instance_controller = require('../controllers/bookinstanceController');
+var character_controller = require('../controllers/characterController');
 
 /// BOOK ROUTES ///
 
@@ -113,5 +114,11 @@ router.get('/bookinstance/:id', book_instance_controller.bookinstance_detail);
 
 // GET request for list of all BookInstance.
 router.get('/bookinstances', book_instance_controller.bookinstance_list);
+
+// GET request for list of all characters.
+router.get('/characters', character_controller.character_list);
+
+
+/////////////////////////////////////////////////////////////
 
 module.exports = router;

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+
+  ul
+    each character in character_list
+      li
+        a(href=character.url) #{character.name}
+
+    else
+      li There are no characters.
