@@ -20,7 +20,7 @@ exports.character_detail = function(req, res, next) {
 
     async.parallel({
         character: function(callback) {
-            Char.findById(req.params.id)
+            Char.findOne({ _name: req.params._name })
               .exec(callback)
         },
     }, function(err, results) {

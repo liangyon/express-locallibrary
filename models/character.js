@@ -15,7 +15,7 @@ var CharacterSchema = new Schema(
 CharacterSchema
 .virtual('url')
 .get(function () {
-  return '/catalog/characters/' + this._name;
+  return '/catalog/characters/' + this.name;
 });
 
 //Export model
