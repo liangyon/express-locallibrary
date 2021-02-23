@@ -20,10 +20,9 @@ exports.character_detail = function(req, res, next) {
 
     async.parallel({
         character: function(callback) {
-            Char.find(req.params.name)
+            Char.findById(req.params.id)
               .exec(callback)
         },
-
     }, function(err, results) {
         if (err) { return next(err); } // Error in API usage.
         if (results.character==null) { // No results.
