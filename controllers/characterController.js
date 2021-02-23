@@ -20,14 +20,14 @@ exports.character_detail = function(req, res, next) {
 
     async.parallel({
         character: function(callback) {
-            Char.findById(req.params.id)
+            Char.find(req.params.name)
               .exec(callback)
         },
 
     }, function(err, results) {
         if (err) { return next(err); } // Error in API usage.
         if (results.character==null) { // No results.
-            var err = new Error('Author not found');
+            var err = new Error('Character not found' + results.character);
             err.status = 404;
             return next(err);
         }
