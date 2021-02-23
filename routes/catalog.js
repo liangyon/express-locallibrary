@@ -115,10 +115,19 @@ router.get('/bookinstance/:id', book_instance_controller.bookinstance_detail);
 // GET request for list of all BookInstance.
 router.get('/bookinstances', book_instance_controller.bookinstance_list);
 
-// GET request for list of all characters.
-router.get('/characters', character_controller.character_list);
 
 
 /////////////////////////////////////////////////////////////
+
+
+// GET request for list of all characters.
+router.get('/characters', character_controller.character_list);
+
+router.get('/characters/:name', character_controller.character_detail);
+
+// router.get('/characters/create', character_controller.)
+
+
+
 
 module.exports = router;
