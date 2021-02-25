@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // mongoose setup
 var mongoose = require('mongoose');
-var dev_db_url;
+var dev_db_url ;
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;

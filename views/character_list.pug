@@ -5,8 +5,10 @@ block content
 
   ul
     each character in character_list
-      li
-        a(href=character.url) #{character.name}
+      div(style="display:inline-block text-align:center vertical-align:text-top")
+        a(href=character.url) 
+          img(src='../../Cicons/'+character.name+'.png' style='width:100px; height:100px;')
+          h2 #{character.name} 
 
     else
       li There are no characters.
