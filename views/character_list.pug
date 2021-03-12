@@ -2,13 +2,14 @@ extends layout
 
 block content
   h1= title
-
-  ul
+  main.inner.cover(role='main')
+    
+  ul(class="row row-cols-3 row-cols-sm-4 row-cols-lg-6 row-cols-xl-8 list-unstyled list")
     each character in character_list
       div(style="display:inline-block text-align:center vertical-align:text-top")
         a(href=character.url) 
-          img(src='../../Cicons/'+character.name+'.png' style='width:100px; height:100px;')
-          h2 #{character.name} 
+          img(src='../../Cicons/'+character.name+'.png' style='width:70px; height:70px;')
+          h5 #{character.name} 
 
     else
       li There are no characters.
