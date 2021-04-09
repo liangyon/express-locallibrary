@@ -25,6 +25,9 @@ a:hover {
   border: .05rem solid #fff;
 }
 
+.content{
+  background: #292a2e;
+}
 
 /*
  * Base structure
@@ -32,9 +35,16 @@ a:hover {
 
 html,
 body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
   height: 100%;
   background-color: #333;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 500;
+ }
 
 body {
   display: -ms-flexbox;
@@ -67,6 +77,10 @@ li{
   margin-bottom: 0;
 }
 
+.nav {
+  margin-bottom: 50px;
+}
+
 .nav-masthead .nav-link {
   padding: .25rem 0;
   font-weight: 700;
@@ -89,14 +103,7 @@ li{
   border-bottom-color: #fff;
 }
 
-@media (min-width: 48em) {
-  .masthead-brand {
-    float: left;
-  }
-  .nav-masthead {
-    float: right;
-  }
-}
+
 
 
 /*
@@ -116,4 +123,39 @@ li{
  */
 .mastfoot {
   color: rgba(255, 255, 255, .5);
+}
+
+
+/*
+*/
+.character-portrait {
+  display:inline-block;
+  text-align:center;
+  vertical-align:text-top;
+  position: relative;
+  width: 120px;
+
+
+  align-items: center;
+  padding: 20px;
+
+  
+}
+
+.charimage {
+  background: #385152;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.caption{
+  display: block;
+}
+
+.container{
+  border-radius: 15px 15px 15px 15px;
+}
+
+.row {
+  border-radius: 15px 15px 15px 15px;
+  align-items: center;
 }
