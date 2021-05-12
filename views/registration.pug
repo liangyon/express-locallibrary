@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  div.container(class="content")
+    p Register 
+    form(action="register" id="reg-form")
+        input(type="text" id="username" placeholder="Username") 
+        input(type="email" id="email" placeholder="Email")
+        input(type="password" id="password" placeholder="Password")
+    script.
+        const form = document.getElementById('reg-form')
+        form.addEventListener('submit', registerUser)
+    
+        function registerUser(event) {
+            event.preventDefault()
+            const username = document.getElementById('username')
+            const email = document.getElementById('email')
+            const password = document.getElementById('password')
+
+            fetch('/api/register' . {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username,
+                    email,
+                    password
+                }).then((res) => res.json())
+            })
+        }

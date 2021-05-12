@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var secret = require('./secrets.js');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -20,8 +20,16 @@ app.use(compression()); //Compress all routes
 app.use(express.static(path.join(__dirname, 'public')));
 
 // mongoose setup
+try {
+  var secret = require('./secrets.js');
+  var dev_db_url = secret.secrets;
+} catch (error) {
+  var dev_db_url = "";
+}
+
+
 var mongoose = require('mongoose');
-var dev_db_url = secret.secrets;
+
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;
