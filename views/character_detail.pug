@@ -1,11 +1,15 @@
 extends layout
 
 block content
-  div.container-fluid.rounded(class="content")
+  div.container(class="content")
+    div(class="row character-header ")
+      div(class="col-md-3")
+        img(src='../../Cicons/'+character.name+'.png' style='width:90px; height:90px;')
+      div(class="col-md-2")
+        h1 #{character.name}
+        p #{character.element } | #{character.weapon } | #{character.rarity}
+      div(class="col-md-7")
+        img(src='../../CharImage/'+character.name+'.png' style='width:400px; ')
+
     div(class="row")
-      img(src='../../Cicons/'+character.name+'.png' style='width:120px; height:100px;')
-      h1 #{character.name}
-      img(src='../../CharImage/'+character.name+'.png' style='width:400px; ')
-      p #{character.element }
-      p #{character.weapon }
-      p #{character.rarity} star
+      p There is some content here
