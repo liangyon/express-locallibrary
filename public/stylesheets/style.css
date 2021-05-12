@@ -27,8 +27,7 @@ a:hover {
 
 .content{
   border-radius: 15px 15px 15px 15px;
-  background: #3a3b41;
-  background: rgba(red, green, blue, 0.5)
+  background-color: rgba(49, 75, 92, 0.8);
 }
 
 /*
@@ -43,6 +42,7 @@ body {
   height: 100%;
   /*background-color: rgb(94, 133, 138);*/
   background-image: url("../../images/wallpaper.jpg");
+  background-position: right top;
 }
 
 h1, h2, h3, h4, h5, h6 {
