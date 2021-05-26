@@ -3,12 +3,11 @@ extends layout
 block content
   div(class="container content")
     h1= title 
-    main.inner.cover(role='main')
-      each character in character_list
-        div(class="character-portrait")
-          a(href=character.url) 
-            img(src='../../Cicons/'+character.name+'.png' style='width:70px; height:70px;' class="charimage")
-            span(class="caption") #{character.name} 
+    each character in character_list
+      div(class="character-portrait col-xs-3")
+        a(href=character.url) 
+          img(src='../../Cicons/'+character.name+'.png' style='width:70px; height:70px;' class="charimage")
+          span(class="caption") #{character.name} 
 
-      else
-        li There are no characters.
+    else
+      li There are no characters.
