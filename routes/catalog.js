@@ -7,6 +7,8 @@ var author_controller = require('../controllers/authorController');
 var genre_controller = require('../controllers/genreController');
 var book_instance_controller = require('../controllers/bookinstanceController');
 var character_controller = require('../controllers/characterController');
+var weapon_controller = require('../controllers/weaponController');
+var artifact_controller = require('../controllers/artifactController');
 
 /// BOOK ROUTES ///
 
@@ -127,7 +129,9 @@ router.get('/characters/:name', character_controller.character_detail);
 
 // router.get('/characters/create', character_controller.)
 
+router.get('/weapons', weapon_controller.weapon_list);
 
+router.get('/weapons/:name', weapon_controller.weapon_detail);
 
 
 module.exports = router;

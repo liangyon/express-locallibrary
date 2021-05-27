@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div.container(class="content")
+    div(class="row character-header ")
+      div(class="col-sm-3 col-md-3 ")
+        img(src='../../weapons/'+ weapon.type.toLowerCase() +'s/'+ weapon.name.toLowerCase().split(" ").join("_").split("'").join("").split("-").join("_") +'.png' style='width:100px; height:100px;' class="charimage")
+      div(class="col-sm-9 col-md-6 ")
+        h1 #{weapon.name}
+        p #{weapon.type} | #{weapon.baseAtk + " Atk" } | #{weapon.rarity + " star"} | #{weapon.subStatType}
+
+    div(class="row")
+      p #{weapon.description}
