@@ -7,7 +7,7 @@ block content
         img(src='../../Cicons/'+character.name+'.png' style='width:90px; height:90px;')
       div(class="col-sm-9 col-md-2 ")
         h1 #{character.name}
-        img(src='../../elements/'+character.element+'.png')
+        img(src='../../elements/'+character.element.toLowerCase()+'.png')
         p #{character.weapon } 
         p #{character.rarity + " star"}
       div(class="col-md-7 d-sm-none d-md-block d-none d-sm-block")

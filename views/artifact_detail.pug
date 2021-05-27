@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  div.container(class="content")
+    div(class="row character-header ")
+      div(class="col-sm-3 col-md-3 ")
+        img(src='../../artifacts/'+ artifact.name.toLowerCase().split(" ").join("_").split("'").join("").split("-").join("_") +'_3.png' style='width:100px; height:100px;' class="charimage")
+      div(class="col-sm-9 col-md-6 ")
+        h1 #{artifact.name}
+        p Max: #{artifact.rarity} star
+    div(class="row")
+        p 2-set effect: 
+        li #{artifact.effect2} 
+        p --------------------
+        p 4-set effect: 
+        li #{artifact.effect4} 

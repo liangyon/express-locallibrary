@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div(class="container content")
+    h1= title 
+    each artifact in artifact_list
+      div(class="character-portrait col-xs-3")
+        a(href=artifact.url) 
+          img(src='../../artifacts/'+ artifact.name.toLowerCase().split(" ").join("_").split("'").join("").split("-").join("_") +'_3.png' style='width:70px; height:70px;' class="charimage")
+          span(class="caption") #{artifact.name} 
+
+    else
+      li There are no artifacts.

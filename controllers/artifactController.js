@@ -1,4 +1,4 @@
-var Arti = require('../models/weapon');
+var Arti = require('../models/artifact');
 var async = require('async');
 var mongoose = require('mongoose');
 const { body,validationResult } = require("express-validator");
@@ -6,7 +6,7 @@ const { body,validationResult } = require("express-validator");
 // Display list of all Char.
 exports.artifact_list = function(req, res, next) {
     Arti.find()
-        .sort([['rarity','ascending']])
+        .sort([['rarity','descending']])
         .exec(function (err, list_artifacts){
             if (err) {return next(err);}
             
@@ -20,7 +20,7 @@ exports.artifact_detail = function(req, res, next) {
 
     async.parallel({
         artifact: function(callback) {
-            Weap.findOne({ name: req.params.name })
+            Arti.findOne({ name: req.params.name })
               .exec(callback)
         },
     }, function(err, results) {

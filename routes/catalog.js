@@ -133,5 +133,9 @@ router.get('/weapons', weapon_controller.weapon_list);
 
 router.get('/weapons/:name', weapon_controller.weapon_detail);
 
+router.get('/artifacts', artifact_controller.artifact_list);
+
+router.get('/artifacts/:name', artifact_controller.artifact_detail);
+
 
 module.exports = router;
