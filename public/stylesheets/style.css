@@ -96,7 +96,7 @@ li{
 
 .row {
   border-radius: 15px 15px 15px 15px;
-  align-items: center;
+  position: relative;
 }
 
 .character-header {

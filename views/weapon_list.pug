@@ -3,11 +3,49 @@ extends layout
 block content
   div(class="container content")
     h1= title 
-    each weapon in weapon_list
-      div(class="character-portrait col-xs-3")
-        a(href=weapon.url) 
-          img(src='../../weapons/'+ weapon.type.toLowerCase() +'s/'+ weapon.name.toLowerCase().split(" ").join("_").split("'").join("").split("-").join("_") +'.png' style='width:70px; height:70px;' class="charimage")
-          span(class="caption") #{weapon.name} 
+    h2 Swords
+    div(class = "row character-header")
+      each weapon in weapon_list 
+        if weapon.type == "Sword" 
+          div(class="character-portrait col-xs-3")
+            a(href=weapon.url) 
+              img(src='../../weapons/'+ weapon.type.toLowerCase() +'s/'+ weapon.name.toLowerCase().split(" ").join("_").split("'").join("").split("-").join("_") +'.png' style='width:70px; height:70px;' class="charimage")
+              span(class="caption") #{weapon.name} 
+    h2 Claymores
+    div(class = "row character-header")
+      each weapon in weapon_list 
+        if weapon.type == "Claymore" 
+          div(class="character-portrait col-xs-3")
+            a(href=weapon.url) 
+              img(src='../../weapons/'+ weapon.type.toLowerCase() +'s/'+ weapon.name.toLowerCase().split(" ").join("_").split("'").join("").split("-").join("_") +'.png' style='width:70px; height:70px;' class="charimage")
+              span(class="caption") #{weapon.name} 
+    h2 Catalysts
+    div(class = "row character-header")
+      each weapon in weapon_list 
+        if weapon.type == "Catalyst" 
+          div(class="character-portrait col-xs-3")
+            a(href=weapon.url) 
+              img(src='../../weapons/'+ weapon.type.toLowerCase() +'s/'+ weapon.name.toLowerCase().split(" ").join("_").split("'").join("").split("-").join("_") +'.png' style='width:70px; height:70px;' class="charimage")
+              span(class="caption") #{weapon.name} 
+    h2 Polearms
+    div(class = "row character-header")
+      each weapon in weapon_list 
+        if weapon.type == "Polearm" 
+          div(class="character-portrait col-xs-3")
+            a(href=weapon.url) 
+              img(src='../../weapons/'+ weapon.type.toLowerCase() +'s/'+ weapon.name.toLowerCase().split(" ").join("_").split("'").join("").split("-").join("_") +'.png' style='width:70px; height:70px;' class="charimage")
+              span(class="caption") #{weapon.name} 
+    h2 Bows
+    div(class = "row character-header")
+      each weapon in weapon_list 
+        if weapon.type == "Bow" 
+          div(class="character-portrait col-xs-3")
+            a(href=weapon.url) 
+              img(src='../../weapons/'+ weapon.type.toLowerCase() +'s/'+ weapon.name.toLowerCase().split(" ").join("_").split("'").join("").split("-").join("_") +'.png' style='width:70px; height:70px;' class="charimage")
+              span(class="caption") #{weapon.name} 
+    //- each weapon in weapon_list
+    //-   div(class="character-portrait col-xs-3")
+    //-     a(href=weapon.url) 
+    //-       img(src='../../weapons/'+ weapon.type.toLowerCase() +'s/'+ weapon.name.toLowerCase().split(" ").join("_").split("'").join("").split("-").join("_") +'.png' style='width:70px; height:70px;' class="charimage")
+    //-       span(class="caption") #{weapon.name} 
 
-    else
-      li There are no weapons.
