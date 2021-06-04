@@ -19,6 +19,11 @@ html(lang='en')
             a.nav-link.active(href='/catalog/weapons') Weapons
             a.nav-link.active(href='/catalog/artifacts') Artifacts
             a.nav-link.active(href='/cool') Archives
+            if user 
+              a.nav-link.active(href='/users/logout') logout
+            else
+              a.nav-link.active(href='/users/login') Login
+              a.nav-link.active(href='/users/register') Register
       div
         block content
     
